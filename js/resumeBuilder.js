@@ -155,30 +155,30 @@ var education = {
 };
 
 var projects = {
-    "project": [{
-        "projectTitle": "Build Own Portfolio ",
-        "projectDates": "Nov.,2016",
-        "projectDescription": "In this project I developed my own portfolio which showcases the projects that I will be completing in this Nanodegree.",
-        "projectImage": ["images/portfolio.jpg", "images/portfolio.jpg"]
+    "projects": [{
+        "title": "Build Own Portfolio ",
+        "dates": "Nov.,2016",
+        "description": "In this project I developed my own portfolio which showcases the projects that I will be completing in this Nanodegree.",
+        "images": ["images/portfolio.jpg", "images/portfolio.jpg"]
     }],
 
     "display": function() {
-        projects.project.forEach(function(pro) {
+        projects.projects.forEach(function(pro) {
 
             $("#projects").append(HTMLprojectStart);
 
-            var formattedprojectTitle = HTMLprojectTitle.replace("%data%", pro.projectTitle);
-            var formattedprojectDates = HTMLprojectDates.replace("%data%", pro.projectDates);
-            var formattedprojectDescription = HTMLprojectDescription.replace("%data%", pro.projectDescription);
+            var formattedprojectTitle = HTMLprojectTitle.replace("%data%", pro.title);
+            var formattedprojectDates = HTMLprojectDates.replace("%data%", pro.dates);
+            var formattedprojectDescription = HTMLprojectDescription.replace("%data%", pro.description);
 
             $(".project-entry:last").append(formattedprojectTitle);
             $(".project-entry:last").append(formattedprojectDates);
             $(".project-entry:last").append(formattedprojectDescription);
 
-            if (pro.projectImage.length > 0) {
+            if (pro.images.length > 0) {
 
-                for (var image = 0; image < pro.projectImage.length; image++) {
-                    var formattedprojectImage = HTMLprojectImage.replace("%data%", pro.projectImage[image]);
+                for (var image = 0; image < pro.images.length; image++) {
+                    var formattedprojectImage = HTMLprojectImage.replace("%data%", pro.images[image]);
                     $(".project-entry:last").append(formattedprojectImage);
                 }
             }
